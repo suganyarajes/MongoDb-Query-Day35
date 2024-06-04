@@ -551,4 +551,24 @@ freshtohome> db.products.find({ "product_material": { "$regex": /soft/i } })
 
 9.Find products which contain product color indigo  and product price 492.00
 
+freshtohome> db.products.find({product_color:"indigo"},{product_price:492})
+[
+  { _id: ObjectId('665eb6f63325a1204387abdd'), product_price: 911 },
+  { _id: ObjectId('665eb6f63325a1204387abe5'), product_price: 84 },
+  { _id: ObjectId('665eb6f63325a1204387abec'), product_price: 36 },
+  { _id: ObjectId('665eb6f63325a1204387abf4'), product_price: 20 }
+]
+freshtohome> db.products.find({product_color:"indigo"},{product_price:"492"})
+[
+  { _id: ObjectId('665eb6f63325a1204387abdd'), product_price: '492' },
+  { _id: ObjectId('665eb6f63325a1204387abe5'), product_price: '492' },
+  { _id: ObjectId('665eb6f63325a1204387abec'), product_price: '492' },
+  { _id: ObjectId('665eb6f63325a1204387abf4'), product_price: '492' }
+]
+
 10.Delete the products which product price value are 28
+
+freshtohome> db.products.deleteMany({ "product_price": 28 })
+
+{ acknowledged: true, deletedCount: 1 }
+
