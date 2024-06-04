@@ -3,7 +3,7 @@ This repository contains a set of MongoDB queries to interact with a product dat
 
 Setup
 Clone the Repository
-git clone
+git clone https://github.com/suganyarajes/MongoDb-Query-Day35.git
 
 #Import the Product JSON
 
